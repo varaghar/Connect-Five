@@ -1,0 +1,41 @@
+#body {
+    width: 800px;
+} 
+.square {
+	display: table-cell;
+	width: 40px;
+	height: 40px;
+	background-color: #997a00;
+	background-image: url("back5.png");
+}
+
+.square.white{
+	background-image: url("white6.png");
+}
+
+.square.black{
+	background-image: url("black6.png");
+}
+
+#popup {
+	width: 150px;
+    height: 80px;
+    position: absolute;
+    z-index: 15;
+    top: 528px;
+    left: 352px;
+    border-radius: 20px;
+    background: white;
+}
+
+#message {
+	display: inline-block;
+    width: 150px;
+    text-align: center;
+    padding-top: 10px;
+}
+
+#button {
+	margin-top: 10px;
+    margin-left: 58px;
+}
