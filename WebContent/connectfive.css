@@ -6,15 +6,15 @@
 	width: 40px;
 	height: 40px;
 	background-color: #997a00;
-	background-image: url("back5.png");
+	background-image: url("back.png");
 }
 
 .square.white{
-	background-image: url("white6.png");
+	background-image: url("white.png");
 }
 
 .square.black{
-	background-image: url("black6.png");
+	background-image: url("black.png");
 }
 
 #popup {

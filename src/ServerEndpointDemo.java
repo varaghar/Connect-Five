@@ -22,12 +22,10 @@ import javax.websocket.server.ServerEndpoint;
 	        for(Pair pair: pairs){
 				if(pair.getBlack().equals(session)){
 					pair.getWhite().getBasicRemote().sendObject(message);
-					System.out.println("broadcastMessage: " + message);
 					break;
 				} else {
 					if( pair.getWhite().equals(session)){
 						pair.getBlack().getBasicRemote().sendObject(message);
-						 System.out.println("broadcastMessage: " + message);
 						break;
 					}
 				}
@@ -49,7 +47,6 @@ import javax.websocket.server.ServerEndpoint;
 		
 		@OnClose
 	    public void onClose (Session peer) throws IOException, EncodeException {
-			System.out.println("CLOSED");
 			if(waiting!=null && waiting.equals(peer)){
 				waiting = null;
 			}

@@ -18,7 +18,6 @@ function onError(evt) {
 websocket.onmessage = function(evt) { onMessage(evt) };
 
 function sendText(json) {
-    console.log("sending text: " + json);
     websocket.send(json);
 }
 
@@ -28,7 +27,6 @@ function notify(message){
 }
                 
 function onMessage(evt) {
-    console.log("received: " + evt.data);
     var message = JSON.parse(evt.data); 
     if (typeof message.start !== 'undefined'){
     	color = message.start;
@@ -55,7 +53,6 @@ function onMessage(evt) {
     	notify(message.win);
     }
     
-    console.log(message);
 }
 
 
@@ -72,7 +69,6 @@ function click(evt){
 } 
 
 function drawPiece(color, id){
-	console.log(color);
 	var node = document.getElementById(id);
 	if(node){
 			node.className = "square "+color;
