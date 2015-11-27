@@ -1,4 +1,4 @@
-var websocket = new WebSocket("ws://localhost:8080/WebSocketPrj01/connectfive"),
+var websocket = new WebSocket("ws://localhost:8080/Gomoku/connectfive"),
 	body = document.getElementById("body"),
 	turn = 0,
 	color,
@@ -7,9 +7,27 @@ var websocket = new WebSocket("ws://localhost:8080/WebSocketPrj01/connectfive"),
 	
 websocket.onerror = function(evt) { onError(evt) };
 document.getElementById("button").addEventListener("click", reload, false);
+document.getElementById("sendButton").addEventListener("click", chat, false);
+document.getElementById("chatText").addEventListener("click", checkEnter, true);
+
+function checkEnter(e){
+	if (e.keyCode == 13) {
+		chat();
+	}
+}
 
 function reload(){
 	location.reload();
+}
+
+function chat() {
+	if(typeof color !== 'undefined'){
+		var text = document.getElementById("chatText").value,
+			json = JSON.stringify({"message": text, "color" : color});
+		document.getElementById("chatHistory").value += color +": "+text+"\n";
+		document.getElementById("chatText").value ="";
+		sendText(json);
+	}
 }
 
 function onError(evt) {
@@ -24,12 +42,14 @@ function sendText(json) {
 function notify(message){
 	document.getElementById("message").innerHTML = message;
 	document.getElementById("popup").style.display = "block";
+	turn = 0;
 }
                 
 function onMessage(evt) {
     var message = JSON.parse(evt.data); 
     if (typeof message.start !== 'undefined'){
     	color = message.start;
+    	document.getElementById("chatHistory").value ="";
     	if(color == "black"){
     		otherColor = "white";
     		turn = 1; 
@@ -44,6 +64,10 @@ function onMessage(evt) {
     		turn = 1;
     		document.getElementById("turn").innerHTML="Your Turn";
     	}
+    }
+    
+    if(typeof message.message !== 'undefined' && message.color !== 'undefined'){
+    	document.getElementById("chatHistory").value += message.color +": "+message.message+"\n";
     }
   
     //Check victory condition

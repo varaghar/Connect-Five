@@ -1,6 +1,10 @@
 #body {
-    width: 800px;
+    width: 760px;
+    padding: 22px 40px 22px 40px;
+	display: inline-block;
+	border: 1px solid black;
 } 
+
 .square {
 	display: table-cell;
 	width: 40px;
@@ -18,24 +22,103 @@
 }
 
 #popup {
-	width: 150px;
-    height: 80px;
+	width: 300px;
+    height: 110px;
     position: absolute;
     z-index: 15;
     top: 528px;
     left: 352px;
     border-radius: 20px;
-    background: white;
+    background: #fde7b6;
+    text-align: center;
+    font-family: Goudy Old Style,Garamond,Big Caslon,Times New Roman,serif;
+    font-size: 1.75em;
 }
 
 #message {
 	display: inline-block;
-    width: 150px;
+    width: 300px;
     text-align: center;
     padding-top: 10px;
+    margin-left: 0px;
 }
 
 #button {
-	margin-top: 10px;
-    margin-left: 58px;
+    display: block;
+    margin: 0 auto;
+    margin-top: 10px;
+    border: 2px solid black;
+    padding: 5px 10px 5px 10px;
+    border-radius: 10px;
+    background-color: transparent;
+}
+
+
+
+#table{
+	background-color: #f6e6c5; 
+	margin: 40px;
+	width: 840px;
+}
+
+#sidebar {
+    width: 300px;
+	height: 840px;
+	margin: 40px;
+    background-color: #fde7b6;
+    display: inline-block;
+	left: -78px;
+	border: 1px solid black;
+    position: relative;
+}
+
+#container {
+    display: flex;
+}
+
+#chatHistory {
+    margin: 0 auto;
+    display: block;
+}
+ 
+#chatText {
+   margin-left: 10px;
+    height: 50px;
+    width: 230px;
+    display: inline-block;
+}
+
+#sendContainer {
+	margin: 0px 10px 10px 0px;
+	display: flex;
+}
+
+#sendButton {
+    display: inline-block;
+}
+
+#turn {
+	width: 290px;
+	text-align: center;
+	font-family: Goudy Old Style,Garamond,Big Caslon,Times New Roman,serif; 
+	font-size: 1.25em;
+}
+
+#chat {
+    margin-top: 27px;
+    width: 290px;
+    text-align: center;
+    font-family: Goudy Old Style,Garamond,Big Caslon,Times New Roman,serif;
+    font-size: 1.25em;
+}
+
+textarea {
+	font-family: Goudy Old Style,Garamond,Big Caslon,Times New Roman,serif;
+    font-size: 1em;
+}
+
+.number {
+	display: inline-block;
+    width: 25px;
+    margin-left: 15px;
 }
